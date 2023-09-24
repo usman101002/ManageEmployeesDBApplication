@@ -23,8 +23,8 @@
                             <GridViewColumn Header="Surname"/>
                             <GridViewColumn Header="Phone"/>
                             <GridViewColumn Header="Salary"/>
+                            <GridViewColumn Header="Position"/>
                             <GridViewColumn Header="Department"/>
-
                         </GridView>
                     </ListView.View>
                 </ListView>
@@ -34,11 +34,31 @@
                     <TextBlock Text="Positions">
                     </TextBlock>
                 </TabItem.Header>
+                <ListView>
+                    <ListView.View>
+                        <GridView>
+                            <GridViewColumn Header="Name"/>
+                            <GridViewColumn Header="Salary"/>
+                            <GridViewColumn Header="Count of staffs"/>
+                            <GridViewColumn Header="Max number"/>
+                            <GridViewColumn Header="Department"/>
+                        </GridView>
+                    </ListView.View>
+                </ListView>
             </TabItem>
             <TabItem Name="DepartmentsTab">
                 <TabItem.Header>
                     <TextBlock Text="Departments"></TextBlock>
                 </TabItem.Header>
+                <ListView>
+                    <ListView.View>
+                        <GridView>
+                            <GridViewColumn Header="Name"/>
+                            <GridViewColumn Header="Count of positions"/>
+                        </GridView>
+
+                    </ListView.View>
+                </ListView>
             </TabItem>
         </TabControl>
 

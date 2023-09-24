@@ -57,6 +57,18 @@
     </ApplicationDefinition>
     <Compile Include="Model\DataWorker.cs" />
     <Compile Include="ViewModel\DataManageVM.cs" />
+    <Page Include="View\AddNewDepartmentWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\AddNewPositionWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\AddNewUserWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="View\MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -64,6 +76,15 @@
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="View\AddNewDepartmentWindow.xaml.cs">
+      <DependentUpon>AddNewDepartmentWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\AddNewPositionWindow.xaml.cs">
+      <DependentUpon>AddNewPositionWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\AddNewUserWindow.xaml.cs">
+      <DependentUpon>AddNewUserWindow.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
