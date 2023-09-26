@@ -21,8 +21,7 @@ namespace ManageEmployeesDBApplication.Model.Data
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             optionsBuilder.UseSqlServer(
-                "Server=(localdb)\\mssqllocaldb;Database=ManageEmployeesDBApplicationDB;Trusted_Connection=True;");
-
+                "Server=(localdb)\\mssqllocaldb;Database=ManageEmployeesDBApplicationDB;Trusted_Connection=True");
         }
     }
 }
