@@ -9,6 +9,36 @@ namespace ManageEmployeesDBApplication.Model
 {
     internal static class DataWorker
     {
+        // получить все отделы
+        public static List<Department> GetAllDepartments()
+        {
+            using (ApplicationContext db = new ApplicationContext())
+            {
+                var result = db.Departments.ToList();
+                return result;
+            }
+        }
+
+        // получить все позиции
+        public static List<Position> GetAllPositions()
+        {
+            using (ApplicationContext db = new ApplicationContext())
+            {
+                var result = db.Positions.ToList();
+                return result;
+            }
+        }
+
+        // получить всех сотрудников
+        public static List<User> GetAllUsers()
+        {
+            using (var db = new ApplicationContext())
+            {
+                var result = db.Users.ToList();
+                return result;
+            }
+        }
+
         // создать сотрудника
         public static string CreateUser(string name, string surname, string phone, Position position)
         {
@@ -118,6 +148,25 @@ namespace ManageEmployeesDBApplication.Model
 
 
         // редактировать сотрудника
+        public static string EditUser(User oldUser, string newName, string newSurname, string newPhone,
+            Position newPosition)
+        {
+            string result = "Такого сотрудника не существует";
+            using (ApplicationContext db = new ApplicationContext())
+            {
+                User user = db.Users.FirstOrDefault(d => d.Id == oldUser.Id);
+                if (user != null)
+                {
+                    user.Name = newName;
+                    user.Surname = newSurname;
+                    user.Phone = newPhone;
+                    user.PositionId = newPosition.Id;
+                    db.SaveChanges();
+                    result = "Выполнено!сотрудник " + user.Name + "изменён.";
+                }
+            }
+            return result;
+        }
 
         // редактировать департамент
         public static string EditDepartment(Department oldDepartment, string newName)
