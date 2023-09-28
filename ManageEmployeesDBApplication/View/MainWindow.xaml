@@ -16,7 +16,7 @@
                 <TabItem.Header>
                     <TextBlock Text="Staff"></TextBlock>
                 </TabItem.Header>
-                <ListView>
+                <ListView ItemsSource="{Binding AllUsers}">
                     <ListView.View>
                         <GridView>
                             <GridViewColumn Header="Name"/>
@@ -34,7 +34,7 @@
                     <TextBlock Text="Positions">
                     </TextBlock>
                 </TabItem.Header>
-                <ListView>
+                <ListView ItemsSource="{Binding AllPositions}">
                     <ListView.View>
                         <GridView>
                             <GridViewColumn Header="Name"/>
@@ -50,7 +50,7 @@
                 <TabItem.Header>
                     <TextBlock Text="Departments"></TextBlock>
                 </TabItem.Header>
-                <ListView>
+                <ListView ItemsSource="{Binding AllDepartments}">
                     <ListView.View>
                         <GridView>
                             <GridViewColumn Header="Name"/>
@@ -61,6 +61,13 @@
                 </ListView>
             </TabItem>
         </TabControl>
+        <StackPanel  Grid.Row="1" Orientation="Horizontal" 
+                     HorizontalAlignment="Right">
+            <Button Content="Новый сотрудник" Command="{Binding OpenAddNewUserWnd}"/>
+            <Button Content="Новая позиция" Command="{Binding OpenAddNewPositionWnd}"/>
+            <Button Content="Новый отдел" Command="{Binding OpenAddNewDepartmentWnd}"/>
+        </StackPanel>
+
 
     </Grid>
 </Window>

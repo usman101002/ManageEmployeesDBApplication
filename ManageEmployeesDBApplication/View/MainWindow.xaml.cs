@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using ManageEmployeesDBApplication.ViewModel;
 
 namespace ManageEmployeesDBApplication.View
 {
@@ -23,6 +24,7 @@ namespace ManageEmployeesDBApplication.View
         public MainWindow()
         {
             InitializeComponent();
+            DataContext = new DataManageVM();
         }
     }
 }
