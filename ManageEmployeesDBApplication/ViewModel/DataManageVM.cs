@@ -12,7 +12,6 @@ namespace ManageEmployeesDBApplication.ViewModel
     {
         //все отделы
         private List<Department> allDepartments = DataWorker.GetAllDepartments();
-
         public List<Department> AllDepartments
         {
             get
@@ -26,6 +25,35 @@ namespace ManageEmployeesDBApplication.ViewModel
             }
         }
 
+        private List<Position> allPositions = DataWorker.GetAllPositions();
+        public List<Position> AllPositions
+        {
+            get
+            {
+                return allPositions;
+            }
+            set
+            {
+                allPositions = value;
+                NotifyPropertyChanged("AllPositions");
+            }
+        }
+
+        private List<Position> allUsers = DataWorker.GetAllPositions();
+        public List<Position> AllUsers
+        {
+            get
+            {
+                return allUsers;
+            }
+            set
+            {
+                allUsers = value;
+                NotifyPropertyChanged("AllUsers");
+            }
+        }
+
+
         public event PropertyChangedEventHandler PropertyChanged;
         private void NotifyPropertyChanged(string propertyName)
         {
@@ -34,5 +62,7 @@ namespace ManageEmployeesDBApplication.ViewModel
                 PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
             }
         }
+
+
     }
 }
