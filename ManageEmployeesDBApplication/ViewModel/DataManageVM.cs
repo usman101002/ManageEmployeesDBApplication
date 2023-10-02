@@ -55,6 +55,26 @@ namespace ManageEmployeesDBApplication.ViewModel
                 NotifyPropertyChanged("AllUsers");
             }
         }
+        public string DepartmentName { get; set; }
+
+        #region COMMANDS TO ADD
+
+        private RelayCommand adddNewDepartment;
+
+        public RelayCommand AdddNewDepartment
+        {
+            get
+            {
+                return adddNewDepartment ?? new RelayCommand(obj =>
+                {
+                    string resultStr = "";
+                    resultStr = DataWorker.CreateDepartment(DepartmentName);
+                });
+            }
+        }
+
+
+        #endregion
 
         #region COMMANDS TO OPEN WINDOWS
 
